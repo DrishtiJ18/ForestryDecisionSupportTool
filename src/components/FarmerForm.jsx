@@ -17,6 +17,7 @@ import {
 
 export default function FarmerForm({
   form,
+  loading,
   onChange,
   onSubmit,
 }) {
@@ -68,10 +69,13 @@ export default function FarmerForm({
 
       <div className="btn-container">
         <button
+          disabled={loading}
           className="recommend-btn"
           onClick={onSubmit}
         >
-          🌿 Get Recommendations
+          {loading
+            ? "Generating Recommendations..."
+            : "🌿 Get Recommendations"}
         </button>
       </div>
     </div>

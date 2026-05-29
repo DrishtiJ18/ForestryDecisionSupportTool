@@ -343,3 +343,9 @@ body {
     color: #d00000;
     border-radius: 12px;
 }
+
+.recommend-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}

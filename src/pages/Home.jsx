@@ -25,6 +25,19 @@ export default function Home() {
     };
 
     const handleSubmit = async () => {
+        if (
+            !form.state ||
+            !form.soil ||
+            !form.rainfall ||
+            !form.purpose
+        ) {
+            setError(
+                "Please select all fields before generating recommendations."
+            );
+            return;
+        }
+
+        setError("");
         setLoading(true);
 
         try {
@@ -73,6 +86,7 @@ export default function Home() {
 
             <FarmerForm
                 form={form}
+                loading={loading}
                 onChange={handleChange}
                 onSubmit={handleSubmit}
             />
